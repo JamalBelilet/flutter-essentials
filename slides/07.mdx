@@ -1,0 +1,29 @@
+# State management
+
+```dart
+class AnyStatefulWidget extends StatefulWidget {
+  State createState() ⇒ AnyStatefulWidgetState();
+}
+
+class AnyStatefulWidgetState extends State<AnyStatefulWidget> {
+  bool isActive = false;
+  void anyFunction() {
+    isActive = !isActive;
+    setState((){});
+  }
+  build(context) {
+    return Column(
+      children: <Widget>[
+        Text("This is a stateful widget"),
+        if(isActive)
+          Text("I am active"),
+        SizedBox(height: 16),
+        FlateButton(
+          onPressed: anyFunction,
+          child: Text("a label here"),
+        ),
+      ],
+    );
+  }
+}
+```

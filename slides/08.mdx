@@ -1,0 +1,18 @@
+# Images: assets & network
+
+To use images you need to declare theme within `pubspec.yaml` file.
+
+```yaml
+assets:
+  - images/cars/
+```
+
+```dart
+ListView(
+  children: <Widget>[
+    Image.asset("images/cars/rapid.png"),
+    SizedBox(height: 16),
+    Image.network("https://images.com/21"),
+  ],
+),
+```

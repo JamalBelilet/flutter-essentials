@@ -1,0 +1,155 @@
+# Essentials
+
+## 1. Basic Widgets
+
+```dart
+Text('This is a generic literal text'),
+
+Container(
+  color: Colors.white12,
+  child: AnyWidget(),
+),
+
+FlatButton(
+  onPressed: anyFunction,
+  child: AnyWidget(),
+),
+```
+
+## 2. Layout composing
+
+### 2.1 Column & Row
+
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.start,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: <Widget>[
+    AnyWidget(),
+    AnyWidget(),
+    AnyWidget(),
+  ],
+),
+
+Row(
+  mainAxisAlignment: MainAxisAlignment.start,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: <Widget>[
+    AnyWidget(),
+    AnyWidget(),
+    AnyWidget(),
+  ],
+),
+```
+
+> Spacer, SizedBox and Expanded
+> are Useful widgets for working with columns and rows
+
+```dart
+Row(
+  children: <Widget>[
+    AnyWidget(),
+    Spacer(), // spacer will take all the remaining space
+    AnyWidget(),
+    SizedBox(width: 32), // sizedbox will take only the specified space
+    AnyWidget(),
+  ],
+),
+
+Row(
+  children: <Widget>[
+    Expanded( // expended will give its child all the remaining space
+      child: AnyWidget()
+    ),
+    AnyWidget(),
+    SizedBox(width: 32),
+    AnyWidget(),
+  ],
+),
+```
+
+### 2.2 ListView & GridView
+
+```dart
+ListView(
+  children: <Widget>[
+    AnyWidget(),
+    AnyWidget(),
+    AnyWidget(),
+  ],
+),
+
+GridView.count(
+  crossAxisCount: 3,
+  children: <Widget>[
+    AnyWidget(),
+    AnyWidget(),
+    AnyWidget(),
+  ],
+)
+```
+
+> ListTile and Card
+> are Useful widgets for working with gridviews and listviews
+
+```dart
+ListView(
+  children: <Widget>[
+    AnyWidget(),
+    ListTile(
+      title: AnyWidget(),
+      subtitle: AnyWidget(),
+      trailing: AnyWidget(),
+      leading: AnyWidget(),
+    ),
+    AnyWidget(),
+    AnyWidget(),
+  ],
+),
+
+GridView.count(
+  crossAxisCount: 2,
+  children: <Widget>[
+    AnyWidget(),
+    Card(
+      child: AnyWidget(),
+    ),
+    AnyWidget(),
+  ],
+),
+```
+
+### 2.3 Stack
+
+```dart
+Stack(
+  alignment: Alignment.bottomRight,
+  children: <Widget>[
+    AnyWidget(),
+    AnyWidget(),
+    AnyWidget(),
+  ],
+),
+```
+
+> Positioned and Align
+> are Useful widgets for working with stacks
+
+```dart
+Stack(
+  alignment: Alignment.bottomRight,
+  children: <Widget>[
+    AnyWidget(),
+    Positioned(
+      top: 0.0,
+      right: 21,
+      child: AnyWidget(),
+    ),
+    AnyWidget(),
+    Align(
+      alignment: Alignment.topLeft,
+      child: AnyWidget(),
+    ),
+  ],
+),
+```

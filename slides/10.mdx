@@ -1,0 +1,39 @@
+# Pro tips
+
+## Implicit animations
+
+```dart
+// this is a StatefulWidget
+//...
+double opacity = 0;
+double size = 0;
+bool isActive = false;
+void toggleActive() {
+  opacity = opacity > 0 ? 0 : 1;
+  size = size > 0 ? 0 : 75;
+  setState((){});
+}
+// ...
+AnimatedContainer(
+  width: size,
+  height: size,
+  color: Colors.blue,
+  duration: Duration(milliseconds: 800),
+  child: AnyWidget(),
+),
+AnimatedOpacity(
+  opacity: opacity,
+  duration: Duration(milliseconds: 800),
+  child: AnyWidget()
+),
+FlatButton(
+  onPressed: toggleActive,
+  child: AnyWidget(),
+),
+// ...
+// end of the StatefulWidget
+```
+
+## Packages
+
+Navigate to https://pub.dev
